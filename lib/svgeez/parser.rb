@@ -1,0 +1,2 @@
+module SVGeez::Parser
+end

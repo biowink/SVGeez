@@ -1,0 +1,3 @@
+[submodule "vendor/prawn-svg"]
+	path = vendor/prawn-svg
+	url = git@github.com:mogest/prawn-svg.git
