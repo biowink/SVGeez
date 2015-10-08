@@ -1,0 +1,9 @@
+<% x = element.attributes['x'].to_f %>
+<% y = element.attributes['y'].to_f %>
+<% width = element.attributes['width'].to_f %>
+<% height = element.attributes['height'].to_f %>
+CAShapeLayer *<%= id %> = [CAShapeLayer layer];
+<%= id %>.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(<%= x %>,
+                                                                   <%= y %>,
+                                                                   <%= width %>,
+                                                                   <%= height %>)].CGPath;

@@ -1,6 +1,7 @@
 # hi from https://github.com/timrwood/SVGPath/blob/master/SVGPath/SVGPath.swift
 
 require 'svgeez/model/point'
+require 'svgeez/parser/path/svgcommand'
 
 module SVGeez::Parser::Path
 	class SVGPath

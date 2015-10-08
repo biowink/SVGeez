@@ -23,4 +23,6 @@ spec = Gem::Specification.new do |gem|
   # gem.add_runtime_dependency "prawn-svg", :branch => "master"
   gem.add_development_dependency "rspec", "~> 3.0"
   gem.add_development_dependency "rake", "~> 10.1"
+
+  gem.add_runtime_dependency "tilt", "~> 2.0.1"
 end

@@ -1,0 +1,13 @@
+<% if !element.transforms.empty? %>
+<% transform = element.transforms.first %>
+<% case transform.type %>
+<%# TODO other scale types %>
+<% when :matrix %>
+<%= id %>.transform = CATransform3DMakeAffineTransform(CGAffineTransformMake(<%= transform.numbers[0] %>,
+                                                                             <%= transform.numbers[1] %>,
+                                                                             <%= transform.numbers[2] %>,
+                                                                             <%= transform.numbers[3] %>,
+                                                                             <%= transform.numbers[4] %>,
+                                                                             <%= transform.numbers[5] %>));
+<% end %>
+<% end %>

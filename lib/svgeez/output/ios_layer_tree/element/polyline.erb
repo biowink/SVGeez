@@ -1,0 +1,29 @@
+<%
+def round float
+	('%.4f' % float).sub!(/[0]+$/, '')
+end
+%>
+CAShapeLayer *<%= id %> = [CAShapeLayer layer];
+UIBezierPath *<%= id %>_Path = [UIBezierPath bezierPath];
+
+<%# According to SVG spec, a 'polygon' is EXACTYLY IDENTICAL to a 'path', if you prepend the letter "M", and postfix the letter 'z'. %>
+<%# So, we take the complicated parser from SVGPathElement, remove all the multi-command stuff, and just use the "M" command %>
+<% s = element.attributes["points"].to_s.strip.gsub(/\s+/, 'L') %>
+<% s = "M#{s}z" %>
+<% svg_path = SVGeez::Parser::Path::SVGPath.new(s) %>
+<% svg_path.commands.each do |command| %>
+<% case command.type %>
+<% when :move %>
+[<%= id %>_Path moveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>)];
+<% when :line %>
+[<%= id %>_Path addLineToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>)];
+<% when :quad_curve %>
+[<%= id %>_Path addQuadCurveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>) controlPoint:CGPointMake(<%= round(command.control.x) %>, <%= round(command.control.y) %>)];
+<% when :cube_curve %>
+[<%= id %>_Path addCurveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>) controlPoint1:CGPointMake(<%= round(command.control1.x) %>, <%= round(command.control1.y) %>) controlPoint2:CGPointMake(<%= round(command.control2.x) %>, <%= round(command.control2.y) %>)];
+<% when :close %>
+[<%= id %>_Path closePath];
+<% end %>
+<% end %>
+
+<%= id %>.path = <%= id %>_Path.CGPath;

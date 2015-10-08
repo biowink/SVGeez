@@ -1,3 +1,5 @@
+require 'tilt'
+
 module SVGeez::Output
 	UnknownRenderer = Class.new(StandardError)
 

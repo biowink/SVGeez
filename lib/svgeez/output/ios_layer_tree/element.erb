@@ -1,0 +1,27 @@
+<% if parent_id %>
+{
+<% end %>
+<% if element.attributes['id'] %>
+	// <<%= element.name %>>: <%= id %>
+<% else %>
+	// <<%= element.name %>>
+<% end %>
+<%= element_output %>
+<% if !transform_output.empty? %>
+<%= transform_output %>
+<% end %>
+
+<%# children %>
+<% if !element.children.empty? %>
+<%= yield %>
+<% end %>
+
+<%# attach to parent %>
+<% if parent_id %>
+	[<%= parent_id %> addSublayer:<%= id %>];
+<% else %>
+	return <%= id %>;
+<% end %>
+<% if parent_id %>
+}
+<% end %>
