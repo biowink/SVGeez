@@ -1,7 +1,7 @@
-<% x = element.attributes['x'].to_f %>
-<% y = element.attributes['y'].to_f %>
-<% width = element.attributes['width'].to_f %>
-<% height = element.attributes['height'].to_f %>
+<% x = element.attributes['cx'].to_f - element.attributes['r'].to_f %>
+<% y = element.attributes['cy'].to_f - element.attributes['r'].to_f %>
+<% width = element.attributes['r'].to_f * 2 %>
+<% height = element.attributes['r'].to_f * 2 %>
 CAShapeLayer *<%= id %> = [CAShapeLayer layer];
 <%= id %>.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(<%= x %>,
                                                                    <%= y %>,
