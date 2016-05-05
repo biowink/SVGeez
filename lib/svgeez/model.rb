@@ -1,0 +1,1 @@
+require 'svgeez/model/point'

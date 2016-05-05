@@ -9,9 +9,9 @@ module SVGeez::Parser::Path
 		def initialize(*args)
 			case args.length
 			when 0
-				@control1 = SVGeez::Model::Point.new
-				@control2 = SVGeez::Model::Point.new
-				@point = SVGeez::Model::Point.new
+				@control1 = nil
+				@control2 = nil
+				@point = nil
 				@type = :close
 			when 3
 				point = SVGeez::Model::Point.new(args[0], args[1])

@@ -2,7 +2,7 @@ module SVGeez::Model
 	class Point
 		attr_accessor :x, :y
 
-		def initialize(x = nil, y = nil)
+		def initialize(x = 0, y = 0)
 			@x = x
 			@y = y
 		end
@@ -13,6 +13,11 @@ module SVGeez::Model
 
 		def - other
 			Point.new(@x - other.x, @y - other.y)
+		end
+
+		def == other
+			@x == other.x &&
+			@y == other.y
 		end
 	end
 end

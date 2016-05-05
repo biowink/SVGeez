@@ -3,7 +3,7 @@
 <% width = element.attributes['rx'].to_f * 2 %>
 <% height = element.attributes['ry'].to_f * 2 %>
 CAShapeLayer *<%= id %> = [CAShapeLayer layer];
-<%= id %>.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(<%= x %>,
-                                                                   <%= y %>,
-                                                                   <%= width %>,
-                                                                   <%= height %>)].CGPath;
+<%= id %>.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(<%= x %>f,
+                                                                   <%= y %>f,
+                                                                   <%= width %>f,
+                                                                   <%= height %>f)].CGPath;

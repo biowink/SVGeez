@@ -10,13 +10,13 @@ UIBezierPath *<%= id %>_Path = [UIBezierPath bezierPath];
 <% svg_path.commands.each do |command| %>
 <% case command.type %>
 <% when :move %>
-[<%= id %>_Path moveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>)];
+[<%= id %>_Path moveToPoint:CGPointMake(<%= round(command.point.x) %>f, <%= round(command.point.y) %>f)];
 <% when :line %>
-[<%= id %>_Path addLineToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>)];
+[<%= id %>_Path addLineToPoint:CGPointMake(<%= round(command.point.x) %>f, <%= round(command.point.y) %>f)];
 <% when :quad_curve %>
-[<%= id %>_Path addQuadCurveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>) controlPoint:CGPointMake(<%= round(command.control.x) %>, <%= round(command.control.y) %>)];
+[<%= id %>_Path addQuadCurveToPoint:CGPointMake(<%= round(command.point.x) %>f, <%= round(command.point.y) %>f) controlPoint:CGPointMake(<%= round(command.control.x) %>f, <%= round(command.control.y) %>f)];
 <% when :cube_curve %>
-[<%= id %>_Path addCurveToPoint:CGPointMake(<%= round(command.point.x) %>, <%= round(command.point.y) %>) controlPoint1:CGPointMake(<%= round(command.control1.x) %>, <%= round(command.control1.y) %>) controlPoint2:CGPointMake(<%= round(command.control2.x) %>, <%= round(command.control2.y) %>)];
+[<%= id %>_Path addCurveToPoint:CGPointMake(<%= round(command.point.x) %>f, <%= round(command.point.y) %>f) controlPoint1:CGPointMake(<%= round(command.control1.x) %>f, <%= round(command.control1.y) %>f) controlPoint2:CGPointMake(<%= round(command.control2.x) %>f, <%= round(command.control2.y) %>f)];
 <% when :close %>
 [<%= id %>_Path closePath];
 <% end %>

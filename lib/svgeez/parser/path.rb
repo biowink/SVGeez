@@ -11,5 +11,5 @@ module SVGeez::Parser::Path
 	:close
 end
 
-require 'svgeez/parser/path/svgcommand.rb'
-require 'svgeez/parser/path/svgpath.rb'
+require 'svgeez/parser/path/svgcommand'
+require 'svgeez/parser/path/svgpath'

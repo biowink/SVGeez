@@ -1,6 +1,6 @@
 <% x1, y1, x2, y2 = element.attributes["viewbox"].split(" ").collect { |n| n.to_f } %>
 CALayer *<%= id %> = [CALayer layer];
-<%= id %>.frame = CGRectMake(<%= x1 %>,
-                       <%= y1 %>,
-                       <%= x2 %>,
-                       <%= y2 %>);
+<%= id %>.frame = CGRectMake(<%= x1 %>f,
+                       <%= y1 %>f,
+                       <%= x2 %>f,
+                       <%= y2 %>f);
