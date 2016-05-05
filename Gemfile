@@ -13,5 +13,5 @@ gemspec
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-#gem 'prawn-svg', :git => 'https://github.com/mogest/prawn-svg', :ref => '5c7fb8ab1c80cb862e9db765508490e80860585d'
+gem 'prawn-svg', :git => 'https://github.com/biowink/prawn-svg', :ref => '41be090859fe6c9e0689e36f4cc01dd088edb174'
 gem 'prawn'

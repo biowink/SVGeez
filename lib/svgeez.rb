@@ -1,6 +1,6 @@
 require 'rubygems'
-
-$:.push File.expand_path('../../vendor/prawn-svg/lib', __FILE__)
+require 'bundler'
+Bundler.setup()
 
 module SVGeez
 end
